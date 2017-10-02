@@ -9,9 +9,15 @@ public class RomanNumber {
         int remainingCounter = number;
 
         while (remainingCounter > 0) {
-            if (remainingCounter >= 5) {
+
+            if (remainingCounter >= 10) {
+                result += "X";
+                remainingCounter -= 10;
+            } else if (remainingCounter >= 5) {
                 result += "V";
                 remainingCounter -= 5;
+
+
             } else {
                 result += "I";
                 remainingCounter--;

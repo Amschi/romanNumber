@@ -56,6 +56,26 @@ public class RomanNumberTest {
         // THEN
         assertThat(romanNumber.convert(6)).isEqualTo("VI");
     }
+
+    @Test
+    public void convert_shouldReturnXfor10() {
+        // GIVEN
+        // WHEN
+
+        // THEN
+        assertThat(romanNumber.convert(10)).isEqualTo("X");
+    }
+
+    @Test
+    public void convert_shouldReturnIVfor4() {
+        // GIVEN
+        // WHEN
+
+        // THEN
+        assertThat(romanNumber.convert(4)).isEqualTo("IV");
+    }
+
+
 }
 
 
