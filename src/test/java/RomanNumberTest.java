@@ -74,8 +74,40 @@ public class RomanNumberTest {
         // THEN
         assertThat(romanNumber.convert(4)).isEqualTo("IV");
     }
+    @Test
+    public void convert_shouldReturnIXfor9() {
+        // GIVEN
+        // WHEN
 
+        // THEN
+        assertThat(romanNumber.convert(9)).isEqualTo("IX");
+    }
+    @Test
+    public void convert_shouldReturnXIVfor14() {
+        // GIVEN
+        // WHEN
 
+        // THEN
+        assertThat(romanNumber.convert(14)).isEqualTo("XIV");
+    }
+
+    @Test
+    public void convert_shouldReturnXLIIfor47() {
+        // GIVEN
+        // WHEN
+
+        // THEN
+        assertThat(romanNumber.convert(47)).isEqualTo("XLVII");
+    }
+
+    @Test
+    public void convert_shouldReturnCDLXXVIIfor477() {
+        // GIVEN
+        // WHEN
+
+        // THEN
+        assertThat(romanNumber.convert(477)).isEqualTo("CDLXXVII");
+    }
 }
 
 
