@@ -18,7 +18,7 @@ public class RomanNumber {
 
       Digit(int value) {
           this.value = value;
-      }
+      }git s
   }
 
     public String convert(int number) {
@@ -26,9 +26,23 @@ public class RomanNumber {
         String result = "";
 
 
-        for (Digit digit : Digit.values()) {
-            if(number >= digit.value) {
-                result = digit.name() + convert(number - digit.value);
+        int remainingCounter = number;
+
+        while (remainingCounter > 0) {
+
+
+            if (remainingCounter >= 10) {
+                result += "X";
+                remainingCounter -= 10;
+            } else if (remainingCounter >= 5) {
+                result += "V";
+                remainingCounter -= 5;
+            } else if (remainingCounter == 4) {
+                result += "IV";
+                remainingCounter = -4;
+            } else {
+                result += "I";
+                remainingCounter--;
             }
         }
 
