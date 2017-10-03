@@ -18,7 +18,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(1)).isEqualTo("I");
+        assertThat(romanNumber.convertToRomanNumeralForm(1)).isEqualTo("I");
     }
 
     @Test
@@ -27,7 +27,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(2)).isEqualTo("II");
+        assertThat(romanNumber.convertToRomanNumeralForm(2)).isEqualTo("II");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(3)).isEqualTo("III");
+        assertThat(romanNumber.convertToRomanNumeralForm(3)).isEqualTo("III");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(5)).isEqualTo("V");
+        assertThat(romanNumber.convertToRomanNumeralForm(5)).isEqualTo("V");
     }
 
     @Test
@@ -54,7 +54,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(6)).isEqualTo("VI");
+        assertThat(romanNumber.convertToRomanNumeralForm(6)).isEqualTo("VI");
     }
 
     @Test
@@ -63,7 +63,17 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(10)).isEqualTo("X");
+        assertThat(romanNumber.convertToRomanNumeralForm(10)).isEqualTo("X");
+    }
+
+
+    @Test
+    public void convert_shouldReturnXXfor20() {
+        // GIVEN
+        // WHEN
+
+        // THEN
+        assertThat(romanNumber.convertToRomanNumeralForm(20)).isEqualTo("XX");
     }
 
     @Test
@@ -72,7 +82,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(4)).isEqualTo("IV");
+        assertThat(romanNumber.convertToRomanNumeralForm(4)).isEqualTo("IV");
     }
     @Test
     public void convert_shouldReturnIXfor9() {
@@ -80,7 +90,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(9)).isEqualTo("IX");
+        assertThat(romanNumber.convertToRomanNumeralForm(9)).isEqualTo("IX");
     }
     @Test
     public void convert_shouldReturnXIVfor14() {
@@ -88,7 +98,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(14)).isEqualTo("XIV");
+        assertThat(romanNumber.convertToRomanNumeralForm(14)).isEqualTo("XIV");
     }
 
     @Test
@@ -97,7 +107,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(47)).isEqualTo("XLVII");
+        assertThat(romanNumber.convertToRomanNumeralForm(47)).isEqualTo("XLVII");
     }
 
     @Test
@@ -106,7 +116,7 @@ public class RomanNumberTest {
         // WHEN
 
         // THEN
-        assertThat(romanNumber.convert(477)).isEqualTo("CDLXXVII");
+        assertThat(romanNumber.convertToRomanNumeralForm(477)).isEqualTo("CDLXXVII");
     }
 }
 

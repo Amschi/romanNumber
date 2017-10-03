@@ -1,52 +1,40 @@
+import java.util.*;
+
+
 public class RomanNumber {
 
 
-  private enum Digit {
-      I(1),
-      IV(4),
-      V(5),
-      IX(9),
-      X(10),
-      XL(40),
-      L(50),
-      C(100),
-      CD(400),
-      D(500),
-      M(1000);
 
-      private final int value;
 
-      Digit(int value) {
-          this.value = value;
-      }git s
-  }
 
-    public String convert(int number) {
+    private static final Map <Integer, String> numeralEquivalents = new HashMap<Integer, String>();
 
+    private static List <Integer> numeralValues;
+    {
+        numeralEquivalents.put(10, "X");
+        numeralEquivalents.put(5, "V");
+        numeralEquivalents.put(1, "I");
+
+        numeralValues = new ArrayList<Integer>(numeralEquivalents.keySet());
+        Collections.sort(numeralValues, Collections.reverseOrder());
+    }
+
+
+
+
+
+
+    public String convertToRomanNumeralForm(int arabicValue) {
+        int remainingCounter = arabicValue;
         String result = "";
 
-
-        int remainingCounter = number;
-
-        while (remainingCounter > 0) {
-
-
-            if (remainingCounter >= 10) {
-                result += "X";
-                remainingCounter -= 10;
-            } else if (remainingCounter >= 5) {
-                result += "V";
-                remainingCounter -= 5;
-            } else if (remainingCounter == 4) {
-                result += "IV";
-                remainingCounter = -4;
-            } else {
-                result += "I";
-                remainingCounter--;
+        for (int numeralValue : numeralValues)
+            while (remainingCounter >= numeralValue) {
+                result += numeralEquivalents.get(numeralValue);
+                remainingCounter -= numeralValue;
             }
-        }
-
-        return result;
+            return result;
+g
     }
 
 }
